@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">SampleDiffUtil</string>
+
+    <!-- 사용자 정보 입력 힌트 -->
+    <string name="hint_name">이름</string>
+    <string name="hint_age">나이</string>
+    <string name="hint_education">학력</string>
+    <string name="hint_gender">성별</string>
+
+    <!-- 토스트 메시지 -->
+    <string name="success">추가되었습니다.</string>
+
+    <!-- 버튼 -->
+    <string name="add_user_str">사용자 추가</string>
+    <string name="del_user_str">사용자 삭제</string>
 </resources>
