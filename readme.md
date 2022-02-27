@@ -35,13 +35,6 @@ DiffUtil은 이전 데이터의 상태와 현재 데이터 간의 차이를 계�
 `AsyncListDiffer`를 더 쓰기 쉽게 래핑한 클래스가 `ListAdapter`이다.
 
 
-
-### 예시
-
-예시는 샘플링 코드를 작성한 뒤 업로드 하도록 한다.
-
-
-
 ### References
 
 [[Android] DiffUtil 사용법 알아보기](https://velog.io/@haero_kim/Android-DiffUtil-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0)
