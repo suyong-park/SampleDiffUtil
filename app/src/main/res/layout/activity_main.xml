@@ -7,8 +7,8 @@
     <data>
 
         <variable
-            name="viewModel"
-            type="com.example.samplediffutil.viewmodel.MainViewModel" />
+            name="mainActivity"
+            type="com.example.samplediffutil.view.MainActivity" />
 
     </data>
 
@@ -58,7 +58,7 @@
             android:id="@+id/add_user_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.onAddUser()}"
+            android:onClick="@{() -> mainActivity.onClickAddUser()}"
             android:text="@string/add_user_str"
             android:layout_marginTop="20dp" />
 

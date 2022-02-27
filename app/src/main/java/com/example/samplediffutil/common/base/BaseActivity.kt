@@ -13,12 +13,14 @@ abstract class BaseActivity<B : ViewDataBinding, V : BaseViewModel> : AppCompatA
     abstract val layoutRes: Int
     abstract val viewModel: V
 
+    abstract fun setBindingVariables(binding: B)
     abstract fun initView()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this, layoutRes)
+        setBindingVariables(binding)
         binding.lifecycleOwner = this@BaseActivity
 
         initBaseObserver()

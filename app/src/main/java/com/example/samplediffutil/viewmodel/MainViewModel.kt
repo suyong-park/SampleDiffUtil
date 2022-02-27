@@ -5,7 +5,7 @@ import com.example.samplediffutil.common.base.BaseViewModel
 
 class MainViewModel : BaseViewModel() {
 
-    fun onAddUser() {
+    fun onSuccessAddUser() {
         showToast(R.string.success)
     }
 }

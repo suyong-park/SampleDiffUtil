@@ -1,6 +1,5 @@
 package com.example.samplediffutil.view
 
-import android.util.Log
 import com.example.samplediffutil.R
 import com.example.samplediffutil.adapter.SampleAdapter
 import com.example.samplediffutil.common.base.BaseActivity
@@ -17,36 +16,43 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
     override fun initView() {
         binding.sampleDataList.adapter = sampleAdapter
+        setDummyData()
+    }
 
+    private fun setDummyData() {
         sampleAdapter.submitList(
             listOf(
-                SampleUser("김", "23", "남", "1"),
-                SampleUser("이", "24", "남", "2"),
-                SampleUser("박", "25", "여", "3")
+                SampleUser("아무개", "20", "남", "한국대학교"),
+                SampleUser("홍길동", "21", "여", "한국대"),
+                SampleUser("박수용", "22", "남", "명지대")
             )
         )
     }
-
-    fun addUser() {
-
-        Log.e(TAG, "함수 호출 여부")
-
-        val name = binding.name.text.toString()
-        val age = binding.age.text.toString()
-        val gender = binding.gender.text.toString()
-        val education = binding.education.text.toString()
-
-        sampleAdapter.submitList(
-            listOf(
-                SampleUser(name, age, gender, education)
-            )
-        )
-
-        showInfo()
+    override fun setBindingVariables(binding: ActivityMainBinding) {
+        binding.mainActivity = this
     }
 
-    private fun showInfo() {
-        viewModel.onAddUser()
+    fun onClickAddUser() {
+        with(binding) {
+            val name = name.text.toString()
+            val age = age.text.toString()
+            val gender = gender.text.toString()
+            val education = education.text.toString()
+
+            with(sampleAdapter) {
+                val currentList = currentList.toMutableList()
+                currentList.add(
+                    SampleUser(name, age, gender, education)
+                )
+
+                submitList(currentList)
+                notifyItemInserted(currentList.size - 1)
+            }
+        }
+
+        with(viewModel) {
+            onSuccessAddUser()
+        }
     }
 
     companion object {
